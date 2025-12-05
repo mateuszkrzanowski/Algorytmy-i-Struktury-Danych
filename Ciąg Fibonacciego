@@ -1,0 +1,43 @@
+#include <iostream>
+
+using namespace std;
+
+long long fibonacci(int n) {
+    if (n <= 0) {
+        return 0;
+    }
+    if (n == 1 || n == 2) {
+        return 1;
+    }
+
+    long long poprzednia_poprzednia = 1;
+    long long poprzednia = 1;
+    long long aktualna = 0;      
+
+    for (int i = 3; i <= n; ++i) {
+        aktualna = poprzednia_poprzednia + poprzednia;
+        poprzednia_poprzednia = poprzednia;
+        poprzednia = aktualna;
+    }
+
+    return aktualna;
+}
+
+int main() {
+    int n;
+    
+    cout << "Ciąg Fibonacciego" << endl;
+    cout << "Podaj numer wyrazu 'n': ";
+    cin >> n;
+
+    if (n < 1) {
+        cout << "Podaj n >= 1." << endl;
+        return 1;
+    }
+
+    long long wynik = fibonacci(n);
+
+    cout << "Wyraz nr " << n << " ciągu Fibonacciego wynosi: " << wynik << endl;
+
+    return 0;
+}

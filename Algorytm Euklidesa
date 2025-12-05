@@ -1,0 +1,36 @@
+#include <iostream>
+
+int NWD_odejmowanie(int a, int b) {
+    if (a <= 0 || b <= 0) {
+        std::cerr << "Błąd: Obie liczby muszą być dodatnie." << std::endl;
+        return -1;
+    }
+
+    while (a != b) {
+        if (a > b) {
+            a = a - b;
+        } else {
+            b = b - a;
+        }
+    }
+    
+    return a;
+}
+
+int main() {
+    int A, B;
+
+    std::cout << "NWD Metodą Odejmowania" << std::endl;
+    std::cout << "Podaj pierwszą liczbę A: ";
+    std::cin >> A;
+    std::cout << "Podaj drugą liczbę B: ";
+    std::cin >> B;
+
+    int wynik = NWD_odejmowanie(A, B);
+
+    if (wynik != -1) {
+        std::cout << "NWD(" << A << ", " << B << ") = " << wynik << std::endl;
+    }
+
+    return 0;
+}

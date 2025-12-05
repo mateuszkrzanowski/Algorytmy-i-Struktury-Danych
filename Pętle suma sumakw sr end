@@ -1,0 +1,82 @@
+#include <iostream>
+
+using namespace std;
+
+int main() { // Mateusz Krzanowski
+    int a, b, c;
+    int wybor;
+    int i;
+    long long suma;
+    long long sumaKwadratow;
+    int licznik;
+    double srednia;
+
+    cout << "Podaj dwie liczby naturalne a i b: ";
+    cin >> a;
+    cin >> b;
+
+    cout << "Wczytano: " << a << " i " << b << endl;
+
+    if (a > b) {
+        c = a;
+        a = b;
+        b = c;
+    }
+
+    do {
+        cout << "\nMENU: 1-suma, 2-sumakw, 3-srednia, 4-koniec" << endl;
+        cout << "Twoj wybor: ";
+        cin >> wybor;
+
+        if (wybor == 1) {
+            suma = 0; 
+            i = a; 
+            
+            while (i <= b) {
+                suma = suma + i;
+                i = i + 1;
+            }
+            cout << "Wynik (suma): " << suma << endl;
+        }
+        
+        else if (wybor == 2) {
+            sumaKwadratow = 0; 
+            i = a;
+            
+            while (i <= b) {
+                sumaKwadratow = sumaKwadratow + (long long)i * i;
+                i = i + 1;
+            }
+            cout << "Wynik (sumaKwadratow): " << sumaKwadratow << endl;
+        }
+
+        else if (wybor == 3) {
+            suma = 0;
+            licznik = 0;
+            i = a;
+            
+            while (i <= b) {
+                suma = suma + i;
+                licznik = licznik + 1;
+                i = i + 1;
+            }
+            
+            if (licznik != 0) {
+                srednia = (double)suma / licznik;
+            } else {
+                srednia = 0;
+            }
+            cout << "Wynik (srednia): " << srednia << endl;
+        }
+
+        else if (wybor == 4) {
+            cout << "Koniec programu." << endl;
+        }
+        else {
+            cout << "Nie ma takiej opcji." << endl;
+        }
+
+    } while (wybor != 4);
+
+    return 0;
+}

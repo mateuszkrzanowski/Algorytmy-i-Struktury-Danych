@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+int main() {
+int n;
+cout << "Podaj ilosc elementow n: ";
+cin >> n;
+int tab[n];
+int suma = 0;
+for (int i = 0; i < n; i++) {
+cout << "Podaj element: ";
+cin >> tab[i];
+suma = suma + tab[i];
+}
+cout << endl;
+cout << "a. Pierwszy element: " << tab[0] << endl;
+cout << "b. Cala tablica: ";
+for (int i = 0; i < n; i++) {
+cout << tab[i] << " ";
+}
+cout << endl;
+int roznica = tab[n - 1] - tab[0];
+cout << "c. Roznica: " << roznica << endl;
+cout << "d. Suma: " << suma << endl;
+int k;
+cout << "e. Podaj nr elementu k: ";
+cin >> k;
+if (k >= 1 && k <= n) {
+cout << "Wybrany element: " << tab[k - 1] << endl;
+} else {
+cout << "Nie ma takiego elementu." << endl;
+}
+return 0;
+}
